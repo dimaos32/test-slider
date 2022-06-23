@@ -3,7 +3,7 @@
 <head>
 
   @@include("source/html/base/head.html")
-  <title>ProjectName — Главная</title>
+  <title>Тестовый слайдер</title>
 
 </head>
 <body>
@@ -13,30 +13,117 @@
   </div>
 
   <div class="wrapper">
-    <-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 --> 
-    @@include("source/html/base/header.html", {
+    <!-- @@include("source/html/base/header.html", {
       "index": true
-    })
+    }) -->
 
     <main>
-      <div class="container">
-        <p><a href="#" data-open-modal="feedback">modal--feedback link</a></p>
-        <p><a href="#" data-open-modal="success">modal--success link</a></p>
-      </div>
+      <h1 class="visually-hidden">Тестовый слайдер</h1>
+      <section class="hero">
+        <div class="row">
+          <div class="hero__slider slider-hero">
+            <div class="slider-hero__container swiper">
+              <div class="slider-hero__wrapper swiper-wrapper">
+                <div class="slider-hero__slide swiper-slide">
+                  <img
+                    class="slider-hero__img"
+                    srcset="img/content/slider_1min.jpg 767w, img/content/slider_1.jpg 1920w"
+                    src="img/content/slider_1.jpg"
+                    alt="Слайд 1">
+                    <div class="slider-hero__content">
+                      <div class="slider-hero__content-inner">
+                        <h2 class="slider-hero__title">Этот текст добавлен для демонстрации на странице</h2>
+                        <p class="slider-hero__desc">
+                          <span class="not-mobile">Акция действует с 01.07.18 по 31.07.18</span>
+                          <span class="mobile">Тест на внимательность</span>
+                        </p>
+                        <div class="slider-hero__links">
+                          <a href="#" class="btn btn--bright slider-hero__link">Подробнее</a>
+                          <a href="#" class="btn slider-hero__link not-mobile">Все акции</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="slider-hero__slide swiper-slide">
+                  <img
+                    class="slider-hero__img"
+                    srcset="img/content/slider_2min.jpg 767w, img/content/slider_2.jpg 1920w"
+                    src="img/content/slider_2.jpg"
+                    alt="Слайд 2">
+                    <div class="slider-hero__content">
+                      <div class="slider-hero__content-inner">
+                        <h2 class="slider-hero__title">Этот текст добавлен для демонстрации на странице</h2>
+                        <p class="slider-hero__desc">
+                          <span class="not-mobile">Акция действует с 01.07.18 по 31.07.18</span>
+                          <span class="mobile">Тест на внимательность</span>
+                        </p>
+                        <div class="slider-hero__links">
+                          <a href="#" class="btn btn--bright slider-hero__link">Подробнее</a>
+                          <a href="#" class="btn slider-hero__link not-mobile">Все акции</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="slider-hero__slide swiper-slide">
+                  <img
+                    class="slider-hero__img"
+                    srcset="img/content/slider_3min.jpg 767w, img/content/slider_3.jpg 1920w"
+                    src="img/content/slider_3.jpg"
+                    alt="Слайд 3">
+                    <div class="slider-hero__content">
+                      <div class="slider-hero__content-inner">
+                        <h2 class="slider-hero__title">Этот текст добавлен для демонстрации на странице</h2>
+                        <p class="slider-hero__desc">
+                          <span class="not-mobile">Акция действует с 01.07.18 по 31.07.18</span>
+                          <span class="mobile">Тест на внимательность</span>
+                        </p>
+                        <div class="slider-hero__links">
+                          <a href="#" class="btn btn--bright slider-hero__link">Подробнее</a>
+                          <a href="#" class="btn slider-hero__link not-mobile">Все акции</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="slider-hero__slide swiper-slide">
+                  <img
+                    class="slider-hero__img"
+                    srcset="img/content/slider_4min.jpg 767w, img/content/slider_4.jpg 1920w"
+                    src="img/content/slider_4.jpg"
+                    alt="Слайд 4">
+                    <div class="slider-hero__content">
+                      <div class="slider-hero__content-inner">
+                        <h2 class="slider-hero__title">Этот текст добавлен для демонстрации на странице</h2>
+                        <p class="slider-hero__desc">
+                          <span class="not-mobile">Акция действует с 01.07.18 по 31.07.18</span>
+                          <span class="mobile">Тест на внимательность</span>
+                        </p>
+                        <div class="slider-hero__links">
+                          <a href="#" class="btn btn--bright slider-hero__link">Подробнее</a>
+                          <a href="#" class="btn slider-hero__link not-mobile">Все акции</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="slider-hero__btn slider-hero__btn--prev">
+              <svg width="16" height="28">
+                <use xlink:href="#icon-chevron"></use>
+              </svg>
+            </button>
+
+            <button class="slider-hero__btn slider-hero__btn--next">
+              <svg width="16" height="28">
+                <use xlink:href="#icon-chevron"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
-
-    @@include("source/html/base/footer.html")
-
-    @@include("source/html/base/modal.html", {
-      "name": "feedback"
-    })
-
-    @@include("source/html/base/modal.html", {
-      "name": "success",
-      "fitContent": true,
-      "noScale": true,
-      "mod": "some-mod"
-    })
+<!--
+    @@include("source/html/base/footer.html") -->
   </div>
 
   <script src="js/vendor.min.js"></script>

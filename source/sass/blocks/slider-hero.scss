@@ -1,0 +1,182 @@
+.slider-hero {
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: calc(100vw * 675 / 1920);
+  max-height: 100vh;
+  /* stylelint-disable-next-line */
+  max-height: calc(100 * var(--vh, 1vh));
+  padding: 100px 60px;
+
+  @include vp-1919 {
+    height: 675px;
+  }
+
+  @include vp-767 {
+    padding: 70px 20px;
+  }
+}
+
+.slider-hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;z-index: 0;
+
+  object-fit: cover;
+}
+
+.slider-hero__content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 100%;
+  width: 950px;
+  margin: 0 auto;
+
+  @include vp-1199 {
+    padding-bottom: 90px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 20px;
+  }
+}
+
+.slider-hero__content-inner {
+  max-width: 560px;
+  margin-left: auto;
+
+  @include vp-1199 {
+    max-width: 495px;
+  }
+
+  @include vp-767 {
+    max-width: 360px;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+}
+
+.slider-hero__title {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 42px;
+  line-height: percentage(57 / 42);
+
+  @include vp-1199 {
+    font-size: 35px;
+    line-height: percentage(47 / 35);
+  }
+
+  @include vp-767 {
+    font-size: 25px;
+    line-height: percentage(34 / 25);
+  }
+}
+
+.slider-hero__desc {
+  margin: 0;
+
+  font-size: 26px;
+
+  .mobile {
+    display: none;
+  }
+
+  @include vp-1199 {
+    font-size: 22px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+
+    .not-mobile {
+      display: none;
+    }
+
+    .mobile {
+      display: inline;
+    }
+  }
+}
+
+.slider-hero__links {
+  display: flex;
+
+  margin: 9px -10px 0;
+
+  @include vp-1199 {
+    margin-top: 7px;
+  }
+
+  @include vp-1199 {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.slider-hero__link {
+  margin: 0 10px;
+
+  @include vp-767 {
+    &.not-mobile {
+      display: none;
+    }
+  }
+}
+
+.slider-hero__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 77px;
+  height: 85px;
+  margin: 0;
+  padding: 5px;
+
+  color: $color-default-white;
+  background-color: $color-transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: background-color $trans-default;
+
+  &--prev {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &--next {
+    right: 0;
+  }
+
+  &--disabled {
+    display: none;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: rgba($color-default-black, 0.1);
+    }
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}

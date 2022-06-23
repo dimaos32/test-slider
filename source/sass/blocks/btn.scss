@@ -1,18 +1,30 @@
 .btn {
-  display: inline-flex;
-  margin: 10px 0;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
 
-  color: $color-default-white;
+  min-width: 155px;
+  margin: 0;
+  padding: 9px 15px 11px;
 
-  background-color: $color-neon-blue;
-  border: none;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: $color-default-black;
+
+  background-color: $color-transparent;
+  border: 1px solid $color-default-black;
+  border-radius: 3px;
   cursor: pointer;
 
-  transition: opacity $trans-default;
+  transition:
+    color $trans-default,
+    background-color $trans-default,
+    border-color $trans-default;
 
-  &--red {
-    background-color: $color-torch-red;
+  &--bright {
+    color: $color-default-white;
+    background-color: $color-carrot-orange;
+    border-color: $color-carrot-orange;
   }
 
   &:disabled {
@@ -24,7 +36,22 @@
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
-      opacity: 0.8;
+      color: $color-carrot-orange;
+      border-color: $color-carrot-orange;
     }
+
+    &--bright {
+      &:hover,
+      &:focus {
+        background-color: $color-transparent;
+      }
+    }
+  }
+
+  @include vp-1199 {
+    min-width: 130px;
+    padding: 7px 11px 9px;
+
+    font-size: 12px;
   }
 }
