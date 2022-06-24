@@ -19,6 +19,7 @@
   }
 
   @include vp-767 {
+    height: 400px;
     padding: 70px 20px;
   }
 }
@@ -132,6 +133,119 @@
     &.not-mobile {
       display: none;
     }
+  }
+}
+
+.slider-hero__pagination {
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  z-index: 2;
+
+  margin: 0 -7px;
+
+  &.swiper-pagination-horizontal {
+    bottom: 20px;
+  }
+
+  @include vp-1199 {
+    &.swiper-pagination-horizontal {
+      bottom: 25px;
+    }
+  }
+
+  @include vp-1023 {
+    margin: 0 -8px;
+  }
+}
+
+.slider-hero__bullet {
+  display: flex;
+  flex-shrink: 0;
+  width: 274px;
+  min-height: 67px;
+  margin: 0 7px;
+  padding: 5px;
+
+  font-size: 12px;
+  line-height: percentage(16 / 12);
+
+  color: $color-default-white;
+
+  background-color: rgba($color-default-black, 0.15);
+  border: 1px solid $color-transparent;
+  border-radius: 3px;
+
+  transition:
+    background-color $trans-default,
+    border-color $trans-default;
+
+  cursor: pointer;
+
+  &.is-active {
+    background-color: rgba($color-default-black, 0.5);
+    border-color: rgba($color-default-black, 0.7);
+  }
+
+  @include vp-1199 {
+    width: 224px;
+    min-height: 55px;
+    padding: 4px;
+
+    font-size: 10px;
+    line-height: percentage(13 / 10);
+  }
+
+  @include vp-1023 {
+    width: 14px;
+    height: 14px;
+    min-height: unset;
+    margin: 0 8px;
+    padding: 0;
+
+    background-color: $color-nero;
+    border: none;
+    border-radius: 50%;
+
+    transition: transform $trans-default;
+
+    &.is-active {
+      transform: scale(1.2);
+
+      background-color: $color-nero;
+    }
+  }
+}
+
+.slider-hero__bullet-img {
+  width: 48px;
+  height: 55px;
+  margin-right: 5px;
+
+  object-fit: cover;
+
+  @include vp-1199 {
+    width: 40px;
+    height: 45px;
+    margin-right: 4px;
+  }
+}
+
+.slider-hero__bullet-desc {
+  margin: 0;
+}
+
+.slider-hero__bullet-title {
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 13px;
+  line-height: percentage(17 / 13);
+
+  @include vp-1199 {
+    font-size: 11px;
+    line-height: percentage(15 / 11);
   }
 }
 
