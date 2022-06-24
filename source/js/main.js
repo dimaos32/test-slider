@@ -1,6 +1,6 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 
-import {initSliderhero} from './modules/init-slider-hero';
+import {initPresentation} from './modules/init-presentation';
 
 // ---------------------------------
 
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
-  initSliderhero();
+  initPresentation();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана

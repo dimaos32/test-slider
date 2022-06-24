@@ -198,22 +198,19 @@
   }
 
   @include vp-1023 {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     min-height: unset;
     margin: 0 8px;
     padding: 0;
 
     background-color: $color-nero;
-    border: none;
+    border: 1px solid $color-nero;
     border-radius: 50%;
 
-    transition: transform $trans-default;
-
     &.is-active {
-      transform: scale(1.2);
-
-      background-color: $color-nero;
+      background-color: $color-transparent;
+      border-color: $color-nero;
     }
   }
 }

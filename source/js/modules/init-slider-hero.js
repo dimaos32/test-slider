@@ -48,7 +48,21 @@ const initSliderhero = () => {
     const initSwiper = () => {
       // eslint-disable-next-line no-undef
       swiper = new Swiper(container, {
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
         loop: true,
+        effect: 'creative',
+        creativeEffect: {
+          prev: {
+            shadow: true,
+            translate: ['-20%', 0, -1],
+          },
+          next: {
+            translate: ['100%', 0, 0],
+          },
+        },
         grabCursor: true,
         mousewheel: {
           forceToAxis: true,

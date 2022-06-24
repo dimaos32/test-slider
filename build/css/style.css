@@ -1295,6 +1295,7 @@ html {
 
 body {
   width: 100%;
+  min-width: 320px;
   height: 100%;
   background-color: #ffffff;
 }
@@ -1525,6 +1526,70 @@ button,
   background-color: #ff8917;
 }
 
+.hero {
+  position: relative;
+}
+
+.hero__cover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  height: calc(100vw * 675 / 1920);
+  max-height: 100vh;
+  /* stylelint-disable-next-line */
+  max-height: calc(100 * var(--vh, 1vh));
+  padding: 100px 60px;
+  background-color: #c4cdd6;
+}
+
+.hero__loader {
+  display: none;
+  width: 60px;
+  height: 60px;
+  border: 10px solid #ff8917;
+  border-bottom-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  -webkit-animation: loader 0.8s linear infinite;
+  animation: loader 0.8s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .slider-hero {
   position: relative;
 }
@@ -1730,6 +1795,10 @@ button,
 }
 
 @media (max-width: 1919px) {
+  .hero__cover {
+    height: 675px;
+  }
+
   .swiper-slide {
     height: 675px;
   }
@@ -1804,32 +1873,30 @@ button,
   }
 
   .slider-hero__bullet {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     min-height: unset;
     margin: 0 8px;
     padding: 0;
     background-color: #282828;
-    border: none;
+    border: 1px solid #282828;
     border-radius: 50%;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    -o-transition: transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   }
 
   .slider-hero__bullet.is-active {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-    background-color: #282828;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: #282828;
   }
 }
 
 @media (max-width: 767px) {
   .container {
     padding: 0 16px;
+  }
+
+  .hero__cover {
+    height: 400px;
+    padding: 70px 20px;
   }
 
   .swiper-slide {
